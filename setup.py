@@ -3,7 +3,7 @@ import sys
 
 from setuptools import setup, find_packages
 
-__version__ = "1.0.1"
+__version__ = "0.0.1"
 
 if sys.version_info < (3,):
     sys.exit('Sorry, Python3 is required.')

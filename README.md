@@ -4,7 +4,8 @@ A Model Context Protocol (MCP) server for retrieving weather information using t
 
 ## Overview
 
-This MCP server provides tools for accessing current weather conditions and forecasts for locations worldwide. It can be easily integrated with MCP clients, including Claude and other LLM applications supporting the MCP protocol.
+This MCP server provides tools for accessing current weather conditions and forecasts for locations worldwide. 
+It can be easily integrated with MCP clients, including Claude and other LLM applications supporting the MCP protocol.
 
 ## Features
 
@@ -69,17 +70,34 @@ uv run mcp dev weather-forecast-server
 To set up a development environment:
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/mcp-server-weather.git
+git clone https://github.com/shibing624/mcp-server-weather.git
 cd weather-forecast-server
 
 uv venv
 uv pip install -e .
 ```
 
+
+## Contact
+
+- Issues and suggestions: [![GitHub issues](https://img.shields.io/github/issues/shibing624/weather-forecast-server.svg)](https://github.com/shibing624/weather-forecast-server/issues)
+- Email: xuming624@qq.com
+- WeChat: Add me (WeChat ID: xuming624) with the message: "Name-Company-NLP" to join our NLP discussion group.
+
+<img src="https://github.com/shibing624/weather-forecast-server/blob/main/docs/wechat.jpeg" width="200" />
+
+
 ## License
 
-Apache 2.0
+This project is licensed under [The Apache License 2.0](/LICENSE) and can be used freely for commercial purposes. Please include a link to `codev` and the license in your product documentation.
+
+## Contribute
+
+We welcome contributions to improve this project! Before submitting a pull request, please:
+
+1. Add appropriate unit tests in the `tests` directory
+2. Run `python -m pytest` to ensure all tests pass
+3. Submit your PR with clear descriptions of the changes
 
 ## Acknowledgements
 

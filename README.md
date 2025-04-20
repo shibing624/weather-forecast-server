@@ -50,6 +50,12 @@ print(get_current_weather('baoding')) # can be "baoding" or "保定"
 Run the server with the stdio transport:
 
 ```bash
+uvx weather-forecast-server
+```
+
+or
+
+```bash
 uv run weather-forecast-server
 ```
 

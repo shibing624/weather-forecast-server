@@ -4,31 +4,41 @@
 @description: 
 """
 import json
-import logging
 import requests
+from loguru import logger
 
-logger = logging.getLogger(__name__)
 
-
-def get_current_weather(city: str) -> str:
+def get_current_weather(city: str = None) -> str:
     """
-    Get current weather for a specified location using wttr.in service.
+    Get current weather for a specified city using wttr.in service.
 
     Parameters:
-        city: Location name, e.g., "Beijing", "New York", "Tokyo", "武汉"
-
+        city: str, city name, e.g., "Beijing", "New York", "Tokyo", "武汉"
+        If None, it will return the weather for the current location.
     Returns:
         str: Current weather information in plain text format.
     """
-    logger.debug(f"get_current_weather({city})")
     try:
         endpoint = "https://wttr.in"
         # Get text format weather data
-        response = requests.get(f"{endpoint}/{city}")
+        if city:
+            response = requests.get(f"{endpoint}/{city}")
+        else:
+            response = requests.get(endpoint)
         response.raise_for_status()
         text_result = response.text
-        logger.debug(f"Weather data for {city}: {text_result}")
+        logger.debug(f"Weather data for {city}: \n{text_result}")
         return text_result
     except Exception as e:
         logger.error(f"Error in getting weather for {city}: {str(e)}")
         return json.dumps({"operation": "get_current_weather", "error": str(e)})
+
+
+if __name__ == '__main__':
+    # Example usage
+    c = "武汉"
+    weather_info = get_current_weather(c)
+    print(weather_info)
+    c = ''
+    weather_info = get_current_weather(c)
+    print(weather_info)

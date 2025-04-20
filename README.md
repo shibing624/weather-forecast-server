@@ -29,28 +29,31 @@ pip install weather-forecast-server
 ```
 
 ## Usage
+### Python Demo
+```python
+from weather_forecast_server import get_current_weather
+print(get_current_weather('保定')) # can be baoding or "保定"
+```
 
-### Running as a standalone server
+![](https://github.com/shibing624/weather-forecast-server/blob/main/docs/weather-baoding.jpg)
 
-Run the server with the default transport (stdio):
+### Running as a standalone MCP server
+
+Run the server with the stdio transport:
 
 ```bash
 uv run weather-forecast-server
 ```
 
-Or specify a transport type:
+### Integrating with Cursor
+
+To add the weather MCP server to Cursor, add stdio MCP with command:
 
 ```bash
-uv run weather-forecast-server --transport sse
+uv run weather-forecast-server
 ```
 
-### Integrating with Claude Desktop
-
-To add the weather server to Claude Desktop:
-
-```bash
-uv run mcp install weather-forecast-server --name "Weather Tool"
-```
+![](https://github.com/shibing624/weather-forecast-server/blob/main/docs/cursor-baoding.jpg)
 
 ### Tools available
 
@@ -73,8 +76,7 @@ To set up a development environment:
 git clone https://github.com/shibing624/mcp-server-weather.git
 cd weather-forecast-server
 
-uv venv
-uv pip install -e .
+pip install -e .
 ```
 
 

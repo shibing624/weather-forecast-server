@@ -5,11 +5,8 @@
 Weather Forecast MCP Server implementation.
 This module provides weather information tools via MCP (Model Context Protocol).
 """
-import logging
 from weather_forecast_server.weather import get_current_weather
 from mcp.server.fastmcp import FastMCP
-
-logger = logging.getLogger(__name__)
 
 # Create MCP server instance
 mcp = FastMCP(
@@ -19,25 +16,21 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-def get_weather(city: str) -> str:
+def get_weather(city: str = None) -> str:
     """
     Get current weather for a specified location using wttr.in service.
 
     Parameters:
         city: Location name, e.g., "Beijing", "New York", "Tokyo", "武汉"
-
+        If None, it will return the weather for the current location.
     Returns:
         str: Current weather information in plain text format.
     """
     return get_current_weather(city)
 
 
-def run_server(transport="stdio"):
+def run_server():
     """
     Run the MCP server with the specified transport.
-    
-    Args:
-        transport: The transport type to use ('stdio', 'sse', etc.)
     """
-    logger.info(f"Starting Weather Forecast MCP Server...")
-    mcp.run(transport=transport)  # noqa
+    mcp.run(transport='stdio')

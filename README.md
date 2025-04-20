@@ -16,16 +16,24 @@ It can be easily integrated with MCP clients, including Claude and other LLM app
 
 ## Installation
 
+### From pip
 You can install the MCP Weather Server using `uv`:
 
 ```bash
-uv install weather-forecast-server
+uv pip install weather-forecast-server
 ```
 
 Or using pip:
 
 ```bash
 pip install weather-forecast-server
+```
+
+### From source
+```bash
+git clone https://github.com/shibing624/mcp-server-weather.git
+cd weather-forecast-server
+pip install -e .
 ```
 
 ## Usage
@@ -45,6 +53,14 @@ Run the server with the stdio transport:
 uv run weather-forecast-server
 ```
 
+or 
+
+```bash
+python -m weather_forecast_server
+```
+
+Then, you can use the server with any MCP client that supports stdio transport.
+
 ### Integrating with Cursor
 
 To add the weather MCP server to Cursor, add stdio MCP with command:
@@ -57,27 +73,8 @@ uv run weather-forecast-server
 
 ### Tools available
 
-1. `get_weather` - Get current weather conditions for a location (up to 3 days)
+- `get_weather` - Get current weather conditions for a location (up to 3 days)
 
-## Example
-
-Using the server with the MCP CLI:
-
-```bash
-# Start the MCP inspector for testing
-uv run mcp dev weather-forecast-server
-```
-
-## Development
-
-To set up a development environment:
-
-```bash
-git clone https://github.com/shibing624/mcp-server-weather.git
-cd weather-forecast-server
-
-pip install -e .
-```
 
 
 ## Contact

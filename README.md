@@ -40,7 +40,7 @@ pip install -e .
 ### Python Demo
 ```python
 from weather_forecast_server import get_current_weather
-print(get_current_weather('保定')) # can be baoding or "保定"
+print(get_current_weather('baoding')) # can be "baoding" or "保定"
 ```
 
 ![](https://github.com/shibing624/weather-forecast-server/blob/main/docs/weather-baoding.jpg)
@@ -88,8 +88,8 @@ uv run weather-forecast-server
 
 ## License
 
-This project is licensed under [The Apache License 2.0](/LICENSE) and can be used freely for commercial purposes. Please include a link to `codev` and the license in your product documentation.
-
+This project is licensed under [The Apache License 2.0](/LICENSE) and can be used freely for commercial purposes. 
+Please include a link to the `weather-forecast-server` project and the license in your product description.
 ## Contribute
 
 We welcome contributions to improve this project! Before submitting a pull request, please:

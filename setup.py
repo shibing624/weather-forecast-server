@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
+"""
+@author:XuMing(xuming624@qq.com)
+@description:
+"""
 import sys
 
 from setuptools import setup, find_packages
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 if sys.version_info < (3,):
     sys.exit('Sorry, Python3 is required.')
@@ -39,6 +43,7 @@ setup(
     install_requires=[
         "mcp",
         "requests",
+        "loguru",
     ],
     packages=find_packages(exclude=['tests']),
     package_dir={'weather_forecast_server': 'weather_forecast_server'},

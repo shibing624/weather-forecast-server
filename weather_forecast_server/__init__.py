@@ -4,4 +4,6 @@
 @description:
 """
 __version__ = "0.0.3"
-from weather_forecast_server.weather import get_current_weather
+
+from weather_forecast_server.weather import get_weather
+

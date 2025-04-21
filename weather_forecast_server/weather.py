@@ -8,15 +8,15 @@ import requests
 from loguru import logger
 
 
-def get_current_weather(city: str = None) -> str:
+def get_weather(city: str = None) -> str:
     """
-    Get current weather for a specified city using wttr.in service.
+    Get weather forecast information for a specified city using wttr.in service.
 
     Parameters:
         city: str, city name, e.g., "Beijing", "New York", "Tokyo", "武汉"
-        If None, it will return the weather for the current location.
+        If None, it will return the weather for the current city.
     Returns:
-        str: Current weather information in plain text format.
+        str: weather forecast information in Markdown format.
     """
     try:
         endpoint = "https://wttr.in"
@@ -35,10 +35,9 @@ def get_current_weather(city: str = None) -> str:
 
 
 if __name__ == '__main__':
-    # Example usage
     c = "武汉"
-    weather_info = get_current_weather(c)
+    weather_info = get_weather(c)
     print(weather_info)
     c = ''
-    weather_info = get_current_weather(c)
+    weather_info = get_weather(c)
     print(weather_info)

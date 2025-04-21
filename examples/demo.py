@@ -7,10 +7,10 @@ import sys
 
 sys.path.append('..')
 
-from weather_forecast_server import get_current_weather
+from weather_forecast_server import get_weather
 
 if __name__ == '__main__':
-    r = get_current_weather('Beijing')
+    r = get_weather('Beijing')
     print(r)
-    r = get_current_weather('保定')
+    r = get_weather('保定')
     print(r)

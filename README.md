@@ -39,8 +39,8 @@ pip install -e .
 ## Usage
 ### Python Demo
 ```python
-from weather_forecast_server import get_current_weather
-print(get_current_weather('baoding')) # can be "baoding" or "保定"
+from weather_forecast_server import get_weather
+print(get_weather('baoding')) # can be "baoding" or "保定"
 ```
 
 ![](https://github.com/shibing624/weather-forecast-server/blob/main/docs/weather-baoding.jpg)

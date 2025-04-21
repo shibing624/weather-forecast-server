@@ -5,28 +5,29 @@
 Weather Forecast MCP Server implementation.
 This module provides weather information tools via MCP (Model Context Protocol).
 """
-from weather_forecast_server.weather import get_current_weather
 from mcp.server.fastmcp import FastMCP
+from weather_forecast_server import weather
+
 
 # Create MCP server instance
 mcp = FastMCP(
     name="WeatherForecastServer",
-    description="Provides global weather forecasts and current weather conditions using wttr.in service",
+    description="Get weather forecast information using wttr.in service",
 )
 
 
 @mcp.tool()
 def get_weather(city: str = None) -> str:
     """
-    Get current weather for a specified location using wttr.in service.
+    Get weather forecast information for a specified city using wttr.in service.
 
     Parameters:
-        city: Location name, e.g., "Beijing", "New York", "Tokyo", "武汉"
-        If None, it will return the weather for the current location.
+        city: city name, e.g., "Beijing", "New York", "Tokyo", "武汉"
+        If None, it will return the weather for the current city.
     Returns:
-        str: Current weather information in plain text format.
+        str: weather forecast information in Markdown format.
     """
-    return get_current_weather(city)
+    return weather.get_weather(city)
 
 
 def run_server():

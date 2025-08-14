@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/shibing624-weather-forecast-server-badge.png)](https://mseep.ai/app/shibing624-weather-forecast-server)
+
 # Weather Forecast MCP Server
 
 A Model Context Protocol (MCP) server for retrieving weather information using the wttr.in service.

@@ -4,16 +4,18 @@
 @description:
 """
 import sys
-
+import os
 from setuptools import setup, find_packages
 
-__version__ = "0.0.5"
+__version__ = "0.0.7"
 
 if sys.version_info < (3,):
     sys.exit('Sorry, Python3 is required.')
 
-with open('README.md', 'r', encoding='utf-8') as f:
-    readme = f.read()
+readme = ""
+if os.path.exists('README.md'):
+    with open('README.md', 'r', encoding='utf-8') as f:
+        readme = f.read()
 
 setup(
     name='weather-forecast-server',

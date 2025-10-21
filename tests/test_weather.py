@@ -43,8 +43,7 @@ class TestWeatherMCPServer(unittest.TestCase):
 
         # Check assertions
         mock_get.assert_called_once_with("https://wttr.in/London")
-        result_json = json.loads(result)
-        self.assertIn("Connection error", result_json["error"])
+        self.assertIn("Connection error", result)
 
 
 if __name__ == "__main__":

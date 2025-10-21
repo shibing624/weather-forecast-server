@@ -3,7 +3,6 @@
 @author:XuMing(xuming624@qq.com)
 @description: 
 """
-import json
 import requests
 from loguru import logger
 
@@ -30,8 +29,9 @@ def get_weather(city: str = None) -> str:
         logger.debug(f"Weather data for {city}: \n{text_result}")
         return text_result
     except Exception as e:
-        logger.error(f"Error in getting weather for {city}: {str(e)}")
-        return json.dumps({"operation": "get_current_weather", "error": str(e)})
+        msg = f"Error getting weather for {city}: {str(e)}"
+        logger.error(msg)
+        return msg
 
 
 if __name__ == '__main__':

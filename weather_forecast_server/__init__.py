@@ -3,7 +3,7 @@
 @author:XuMing(xuming624@qq.com)
 @description:
 """
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 from weather_forecast_server.weather import get_weather
 

@@ -36,9 +36,9 @@ def _weather_desc(code) -> str:
 def _get_weather_wttr_in(city: str = None) -> str:
     """Get weather text from wttr.in. Raises on failure."""
     if city:
-        response = requests.get(f"{WTTR_ENDPOINT}/{city}", timeout=0.5)
+        response = requests.get(f"{WTTR_ENDPOINT}/{city}", timeout=1)
     else:
-        response = requests.get(WTTR_ENDPOINT, timeout=0.5)
+        response = requests.get(WTTR_ENDPOINT, timeout=1)
     response.raise_for_status()
     return response.text
 

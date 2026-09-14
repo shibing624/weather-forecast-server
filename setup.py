@@ -7,7 +7,7 @@ import sys
 import os
 from setuptools import setup, find_packages
 
-__version__ = "0.0.7"
+__version__ = "0.0.8"
 
 if sys.version_info < (3,):
     sys.exit('Sorry, Python3 is required.')
@@ -43,7 +43,7 @@ setup(
     ],
     keywords='weather_forecast_server, weather forecast, server, weather, forecast',
     install_requires=[
-        "mcp",
+        "mcp>=2.2.0",
         "requests",
         "loguru",
     ],

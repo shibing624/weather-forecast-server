@@ -2,7 +2,7 @@
 
 # Weather Forecast MCP Server
 
-A Model Context Protocol (MCP) server for retrieving weather information using the wttr.in service.
+A Model Context Protocol (MCP) server for retrieving weather information using the wttr.in service, with Open-Meteo as fallback (free, no API key required).
 
 ## Overview
 
@@ -108,5 +108,5 @@ We welcome contributions to improve this project! Before submitting a pull reque
 
 ## Acknowledgements
 
-- Weather data provided by [wttr.in](https://wttr.in)
-- Built with [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) 
+- Weather data provided by [wttr.in](https://wttr.in), fallback by [Open-Meteo](https://open-meteo.com) (free, no API key required)
+- Built with [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) 2.x (requires `mcp>=2.2.0`, not compatible with mcp 1.x)

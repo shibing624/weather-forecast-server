@@ -52,7 +52,7 @@ class TestWeatherMCPServer(unittest.TestCase):
 
         result = get_weather("London")
 
-        mock_get.assert_called_once_with("https://wttr.in/London", timeout=0.5)
+        mock_get.assert_called_once_with("https://wttr.in/London", timeout=1)
         self.assertEqual(result, "Weather data for London")
 
     @mock.patch("requests.get")
